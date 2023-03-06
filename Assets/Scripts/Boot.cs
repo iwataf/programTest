@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Pickle;
 
 public class Boot : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Boot : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(systemCanvas);
-        Fader.Instance.FadeOut(() =>
+        Fader.Instance.FadeOut(1,0, () =>
         {
             SceneManager.LoadSceneAsync("Title");
         });

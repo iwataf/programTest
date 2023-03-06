@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Pickle;
 
 public class Title : MonoBehaviour
 {
@@ -18,11 +19,11 @@ public class Title : MonoBehaviour
             SceneManager.LoadSceneAsync("Boot");
             return;
         }
-        Fader.Instance.FadeIn();
+        Fader.Instance.FadeIn(1);
 
         startPanel.onClick.AddListener(() =>
         {
-            Fader.Instance.FadeOut(() =>
+            Fader.Instance.FadeOut(1,0,() =>
             {
                 SceneManager.LoadSceneAsync("GameMain");
             });

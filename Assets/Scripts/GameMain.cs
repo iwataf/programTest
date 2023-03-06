@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Pickle;
 
 public class GameMain : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class GameMain : MonoBehaviour
             SceneManager.LoadSceneAsync("Boot");
             return;
         }
-        Fader.Instance.FadeIn();
+        Fader.Instance.FadeIn(1);
     }
 
     // Update is called once per frame
